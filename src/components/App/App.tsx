@@ -20,7 +20,7 @@ const Paginate = (ReactPaginate as any).default || ReactPaginate;
 function App() {
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const [movieValue, setMovieValue] = useState("");
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
 
   const {
     data = { results: [], total_pages: 0 },
