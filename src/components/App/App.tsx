@@ -25,11 +25,12 @@ function App() {
   const {
     data = { results: [], total_pages: 0 },
     isError,
-    isLoading,
+    isLoading, 
   } = useQuery<FetchMoviesResponse>({
     queryKey: ["movie", movieValue, page],
     queryFn: () => fetchMovies(movieValue, page),
     enabled: movieValue !== "",
+    placeholderData: (previousData) => previousData,
   });
 
   useEffect(() => {
